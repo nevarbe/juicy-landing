@@ -114,6 +114,35 @@
     font-family: 'Baloo 2'; font-weight: 700; font-size: 16px;
     animation: bob 5.2s ease-in-out infinite reverse;
   }
+  .float-photo {
+    position: absolute; right: -9%; bottom: -9%; width: 240px;
+    background: var(--white); border: var(--border); border-radius: 20px;
+    box-shadow: var(--shadow); padding: 8px 8px 10px; transform: rotate(6deg);
+    animation: bob 5.8s ease-in-out infinite;
+  }
+  .float-photo img { border-radius: 12px; }
+  .float-photo .cap { font-family: 'Baloo 2'; font-weight: 700; font-size: 13px; text-align: center; padding-top: 6px; }
+  .float-photo .cap b { color: var(--berry); }
+
+  /* real results */
+  .results { background: var(--bg-soft); border-top: 3px solid var(--ink); border-bottom: 3px solid var(--ink); }
+  .res-grid { display: grid; grid-template-columns: 1.25fr .75fr; gap: 26px; margin-top: 54px; align-items: stretch; }
+  .res-card {
+    background: var(--white); border: var(--border); border-radius: var(--r);
+    box-shadow: var(--shadow); overflow: hidden; position: relative;
+    display: flex; flex-direction: column; transition: transform .18s;
+  }
+  .res-card:hover { transform: translateY(-6px) rotate(-.4deg); }
+  .res-card .ph { flex: 1; min-height: 300px; }
+  .res-card .ph img { width: 100%; height: 100%; object-fit: cover; }
+  .res-card .cap { border-top: var(--border); padding: 16px 22px; display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+  .res-card .cap b { font-family: 'Baloo 2'; font-size: 18px; }
+  .res-card .cap span { font-size: 12.5px; font-weight: 800; color: var(--ink-soft); letter-spacing: .5px; }
+  .res-badge {
+    position: absolute; top: 14px; left: 14px; background: var(--gold); border: 2.5px solid var(--ink);
+    border-radius: 999px; padding: 5px 14px; font-family: 'Baloo 2'; font-weight: 700; font-size: 13.5px;
+    box-shadow: 0 3px 0 var(--ink);
+  }
   @keyframes bob { 0%,100% { translate: 0 0 } 50% { translate: 0 -12px } }
 
   .spark { position: absolute; color: var(--pink); opacity: .8; animation: twinkle 3.2s ease-in-out infinite; }
@@ -287,6 +316,9 @@
     .moves-grid { grid-template-columns: repeat(2, 1fr); }
     .chat-wrap { grid-template-columns: 1fr; gap: 44px; }
     .float-mascot { width: 140px; height: 140px; left: -2%; }
+    .float-photo { width: 170px; right: -3%; bottom: -12%; }
+    .res-grid { grid-template-columns: 1fr; }
+    .res-card .ph { min-height: 240px; }
     section { padding: 78px 0; }
   }
   @media (max-width: 520px) {
@@ -336,6 +368,10 @@
       <div class="phone"><img src="assets/shot-home.jpg" alt="JUICY home screen with the Glutemaxxing Meter"></div>
       <div class="float-mascot"><video src="assets/mascot-workout.mp4" autoplay muted loop playsinline></video></div>
       <div class="float-tag">no gym needed ✨</div>
+      <div class="float-photo">
+        <img src="assets/real-beforeafter.jpg" alt="Before and after glute transformation">
+        <div class="cap">before → <b>after</b> 🍑</div>
+      </div>
     </div>
   </div>
 </header>
@@ -365,6 +401,27 @@
       </div>
       <div class="meterbar"><i id="meter"></i></div>
       <div class="meter-cap"><span>day 1</span><span>GLUTEMAXXING METER</span><span>day 90</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= REAL RESULTS ================= -->
+<section class="results" id="results">
+  <div class="wrap center rv">
+    <div class="sec-label">THE RECEIPTS</div>
+    <h2 class="sec-title">Real bodies.<br>Real results.</h2>
+    <p class="sec-sub">Consistency looks like this. Show up for the plan and the mirror does the talking.</p>
+  </div>
+  <div class="wrap res-grid">
+    <div class="res-card rv">
+      <div class="res-badge">3x faster on a plan 📈</div>
+      <div class="ph"><img src="assets/real-progress.jpg" alt="Transformation from week 1 to week 12" loading="lazy"></div>
+      <div class="cap"><b>Week 1 → Week 12</b><span>STRUCTURE BEATS MOTIVATION</span></div>
+    </div>
+    <div class="res-card rv">
+      <div class="res-badge">the goal 👖</div>
+      <div class="ph"><img src="assets/real-jeans.jpg" alt="Jeans fitting better after the program" loading="lazy"></div>
+      <div class="cap"><b>Jeans that finally fit.</b><span>THE BACK VIEW YOU WANT</span></div>
     </div>
   </div>
 </section>
