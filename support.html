@@ -3,49 +3,169 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Support - JUICY</title>
+<title>Support — JUICY</title>
+<meta name="description" content="JUICY support: subscriptions, restore purchases, progress, and how to reach a human.">
+<link rel="icon" href="assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
 <style>
-  :root { --bg:#FDF0F3; --card:#fff; --ink:#3A2230; --ink-soft:#7A5D6B; --berry:#C93E63; --line:#3A2230; }
+  :root {
+    --bg:#FDF0F3; --bg-soft:#FBE3EA; --pink:#FB4C7F; --pink-deep:#D82D60; --berry:#C93E63;
+    --gold:#FFD34D; --ink:#3A2230; --ink-soft:#7A5D6B; --white:#fff;
+    --r:28px; --border:3px solid var(--ink); --shadow:0 7px 0 var(--ink); --shadow-sm:0 5px 0 var(--ink);
+  }
   * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; background:var(--bg); color:var(--ink); line-height:1.6; -webkit-font-smoothing:antialiased; }
-  .wrap { max-width:660px; margin:0 auto; padding:48px 22px 70px; }
-  .logo { font-size:26px; font-weight:800; color:var(--berry); letter-spacing:-0.5px; }
-  h1 { font-size:28px; margin:24px 0 10px; }
-  p, li { color:var(--ink); font-size:15.5px; }
-  .callout { background:var(--card); border:2.5px solid var(--line); border-radius:18px; padding:22px; margin:22px 0; box-shadow:0 4px 0 var(--line); text-align:center; }
-  .callout a { display:inline-block; margin-top:10px; background:var(--berry); color:#fff; text-decoration:none; font-weight:700; padding:12px 26px; border-radius:999px; border:2.5px solid var(--line); }
-  h2 { font-size:18px; margin:24px 0 6px; }
-  a { color:var(--berry); font-weight:600; }
-  footer { margin-top:36px; font-size:14px; color:var(--ink-soft); }
-  footer a { margin-right:14px; }
-  @media (prefers-color-scheme: dark) { :root { --bg:#24151D; --card:#341F2A; --ink:#FBEAF0; --ink-soft:#C69EB0; --line:#120A0E; --berry:#F0789A; } }
+  body { font-family:'Nunito',sans-serif; background:var(--bg); color:var(--ink); line-height:1.65; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3 { font-family:'Baloo 2',sans-serif; line-height:1.1; }
+  a { color:var(--berry); font-weight:700; }
+  .wrap { max-width:860px; margin:0 auto; padding:0 24px; }
+  nav { position:sticky; top:0; z-index:50; background:rgba(253,240,243,.92); backdrop-filter:blur(14px); border-bottom:3px solid var(--ink); }
+  .nav-in { max-width:1180px; margin:0 auto; padding:0 24px; display:flex; align-items:center; justify-content:space-between; height:76px; }
+  .logo { display:flex; align-items:center; gap:12px; text-decoration:none; }
+  .logo img { width:44px; height:44px; border-radius:12px; border:2.5px solid var(--ink); }
+  .logo b { font-family:'Baloo 2'; font-weight:800; font-size:26px; color:var(--berry); }
+  .logo span { font-size:10px; font-weight:800; letter-spacing:3px; color:var(--ink); display:block; margin-top:-6px; }
+  .nav-links { display:flex; gap:28px; font-weight:800; font-size:15px; }
+  .nav-links a { text-decoration:none; color:var(--ink-soft); }
+  .nav-links a:hover { color:var(--berry); }
+  .btn { font-family:'Baloo 2'; font-weight:700; font-size:17px; background:var(--pink); color:#fff; text-decoration:none; padding:13px 28px; border-radius:999px; border:var(--border); box-shadow:var(--shadow-sm); display:inline-block; }
+  header.page { text-align:center; padding:72px 24px 34px; }
+  .sec-label { display:inline-block; background:var(--ink); color:#fff; border-radius:999px; font-weight:800; font-size:12.5px; letter-spacing:2.5px; padding:8px 18px; margin-bottom:18px; }
+  h1 { font-size:clamp(40px,6vw,64px); font-weight:800; letter-spacing:-1px; }
+  .date { color:var(--ink-soft); font-weight:700; font-size:14.5px; margin-top:10px; }
+  .tabs { display:flex; justify-content:center; gap:12px; flex-wrap:wrap; padding:6px 24px 44px; }
+  .tab { font-family:'Baloo 2'; font-weight:700; font-size:16px; text-decoration:none; color:var(--ink); background:var(--white); border:2.5px solid var(--ink); border-radius:999px; padding:10px 26px; box-shadow:0 4px 0 var(--ink); }
+  .tab.on { background:var(--pink); color:#fff; }
+  .tab:hover { transform:translateY(2px); box-shadow:0 2px 0 var(--ink); }
+  .card { background:var(--white); border:var(--border); border-radius:var(--r); box-shadow:var(--shadow); padding:30px 34px; margin-bottom:26px; }
+  .card.hero { background:var(--pink); color:#fff; text-align:center; }
+  .card.hero h2 { color:#fff; }
+  .card.hero p { color:rgba(255,255,255,.92); }
+  .card.hero .btn { background:var(--gold); color:var(--ink); margin-top:14px; }
+  .card h2 { font-size:24px; margin-bottom:8px; }
+  .card p, .card li { font-size:16px; color:var(--ink); font-weight:600; }
+  .card p + p { margin-top:10px; }
+  .card ul, .card ol { margin:10px 0 4px 22px; }
+  .card li { margin-bottom:6px; }
+  .faq { border-top:2.5px solid var(--bg-soft); padding-top:14px; margin-top:14px; }
+  .faq:first-of-type { border-top:0; padding-top:0; margin-top:0; }
+  .faq b { font-family:'Baloo 2'; font-size:17.5px; display:block; margin-bottom:4px; }
+  main { padding-bottom:80px; }
+  footer { background:var(--ink); color:var(--bg); padding:54px 0; }
+  .foot-in { max-width:1180px; margin:0 auto; padding:0 24px; display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap; }
+  .foot-in .logo b { color:#fff; }
+  .foot-in .logo span { color:var(--gold); }
+  .foot-links { display:flex; gap:26px; font-weight:700; font-size:14.5px; }
+  .foot-links a { color:rgba(253,240,243,.75); text-decoration:none; }
+  .foot-links a:hover { color:var(--gold); }
+  .copyright { font-size:13px; color:rgba(253,240,243,.5); font-weight:600; }
+  @media (max-width:900px){ .nav-links{display:none} .card{padding:24px 22px} }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <div class="logo">JUICY 🍑</div>
-  <h1>Support</h1>
-  <p>Need help, found a bug, or have a question about your subscription? Juicy has your back.</p>
 
-  <div class="callout">
-    <div style="font-size:40px">💌</div>
-    <p>Email us and we will get back to you as soon as we can:</p>
-    <a href="mailto:cevo355@gmail.com">cevo355@gmail.com</a>
+<nav>
+  <div class="nav-in">
+    <a class="logo" href="index.html"><img src="assets/icon.png" alt=""><div><b>JUICY</b><span>GLUTEMAXXING</span></div></a>
+    <div class="nav-links">
+      <a href="index.html#glowup">The Glow-Up</a><a href="index.html#features">Features</a><a href="index.html#moves">The Moves</a><a href="index.html#juicy">Meet Juicy</a>
+    </div>
+    <a class="btn" href="index.html#get">Get the app</a>
+  </div>
+</nav>
+
+<header class="page">
+  <div class="sec-label">HELP</div>
+  <h1>Support</h1>
+  <div class="date">Real humans. Real answers. Usually within a day.</div>
+</header>
+
+<div class="tabs">
+  <a class="tab" href="privacy.html">Privacy</a>
+  <a class="tab" href="terms.html">Terms of Use</a>
+  <a class="tab on" href="support.html">Support</a>
+</div>
+
+<main class="wrap">
+  <div class="card hero">
+    <h2>Need help? 💌</h2>
+    <p>Found a bug, have a billing question, or just want to tell us Juicy judged you too hard? Email us and a human will get back to you.</p>
+    <a class="btn" href="mailto:cevo355@gmail.com">cevo355@gmail.com</a>
   </div>
 
-  <h2>Managing your subscription</h2>
-  <p>To view, change, or cancel your subscription, open the <strong>Settings</strong> app on your iPhone, tap your name at the top, then <strong>Subscriptions</strong>. You can also restore a previous purchase from inside JUICY under Settings, "Restore purchases".</p>
+  <div class="card">
+    <h2>Subscriptions and billing</h2>
+    <div class="faq">
+      <b>How do I cancel my subscription?</b>
+      <p>Open the iPhone <strong>Settings</strong> app → tap your name at the top → <strong>Subscriptions</strong> → JUICY → Cancel. Cancelling stops the next renewal; you keep access until the end of the period you already paid for. Deleting the app does NOT cancel a subscription.</p>
+    </div>
+    <div class="faq">
+      <b>How do I restore my purchase on a new phone?</b>
+      <p>Install JUICY, open <strong>Settings inside the app</strong> → <strong>Restore purchases</strong>. Make sure you are signed into the same Apple ID you bought with.</p>
+    </div>
+    <div class="faq">
+      <b>How do I get a refund?</b>
+      <p>Apple handles all payments and refunds. Go to <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>, sign in with your Apple ID, find JUICY and follow the steps.</p>
+    </div>
+    <div class="faq">
+      <b>Why was I charged again?</b>
+      <p>Subscriptions renew automatically (weekly or yearly, whichever you picked) unless cancelled at least 24 hours before the renewal date. You can check your renewal date under Settings → your name → Subscriptions.</p>
+    </div>
+  </div>
 
-  <h2>Lost your progress?</h2>
-  <p>JUICY stores your progress on your device. If you reinstalled the app or switched phones, your streak and collection may reset, but your subscription can be restored with "Restore purchases" in the app's Settings.</p>
+  <div class="card">
+    <h2>Progress and streaks</h2>
+    <div class="faq">
+      <b>I reinstalled the app and my progress is gone.</b>
+      <p>JUICY stores everything on your device for privacy, so deleting the app deletes your progress with it. Your subscription is safe and comes back with "Restore purchases", but streaks, coins and the collection start fresh. Juicy has forgiven worse.</p>
+    </div>
+    <div class="faq">
+      <b>Why is only one workout available per day?</b>
+      <p>That's the design. The plan is built around consistency and recovery: one session per day, plus rest days that matter. Juicy grows overnight, and so do glutes.</p>
+    </div>
+    <div class="faq">
+      <b>I missed a day. Did I lose everything?</b>
+      <p>Your banked days and collection are permanent. Streaks reset when a day is fully missed, but the plan simply continues where you left off. Come back, she is waiting.</p>
+    </div>
+  </div>
 
-  <h2>Frequently asked</h2>
-  <p><strong>Do I need a gym or equipment?</strong> No. Every workout can be done at home with just your body. A resistance band or dumbbells are optional bonuses.</p>
-  <p><strong>Is it really personalized?</strong> Yes. Your plan is built from the goals, fitness level and equipment you choose during setup.</p>
+  <div class="card">
+    <h2>Workouts</h2>
+    <div class="faq">
+      <b>Do I need a gym or equipment?</b>
+      <p>No. Every plan works with just your body and a floor. If you own a resistance band or dumbbells, tell the app during setup and it will use them for extra burn.</p>
+    </div>
+    <div class="faq">
+      <b>Are the workouts personalized?</b>
+      <p>Yes. Your plan is generated from your goals, current fitness level, equipment and schedule, and your reps climb automatically as you get stronger across the 30, 60 and 90-day challenges.</p>
+    </div>
+    <div class="faq">
+      <b>Something hurts. What do I do?</b>
+      <p>Stop. Pain is a signal, not a challenge. Skip the exercise, rest, and see a professional if it persists. Juicy will not be mad, she promises.</p>
+    </div>
+  </div>
 
-  <footer>
-    <a href="index.html">Home</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a>
-  </footer>
-</div>
+  <div class="card">
+    <h2>Notifications</h2>
+    <div class="faq">
+      <b>How do I turn reminders on or off?</b>
+      <p>Inside the app, go to Settings and toggle reminders, or manage permissions in iPhone Settings → Notifications → JUICY. Reminders are scheduled locally on your phone; we never send remote pushes.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Still stuck?</h2>
+    <p>Email <a href="mailto:cevo355@gmail.com">cevo355@gmail.com</a> with what happened, your iPhone model and iOS version, and a screenshot if you have one. The more detail, the faster the fix.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="foot-in">
+    <a class="logo" href="index.html"><img src="assets/icon.png" alt=""><div><b>JUICY</b><span>GLUTEMAXXING</span></div></a>
+    <div class="foot-links"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a><a href="support.html">Support</a></div>
+    <div class="copyright">© 2026 JUICY. Grow responsibly. 🍑</div>
+  </div>
+</footer>
 </body>
 </html>

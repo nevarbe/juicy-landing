@@ -3,67 +3,158 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Privacy Policy - JUICY</title>
+<title>Privacy Policy — JUICY</title>
+<meta name="description" content="JUICY privacy policy. The short version: we collect nothing. Everything stays on your device.">
+<link rel="icon" href="assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
 <style>
-  :root { --bg:#FDF0F3; --card:#fff; --ink:#3A2230; --ink-soft:#7A5D6B; --berry:#C93E63; --line:#3A2230; }
+  :root {
+    --bg:#FDF0F3; --bg-soft:#FBE3EA; --pink:#FB4C7F; --pink-deep:#D82D60; --berry:#C93E63;
+    --gold:#FFD34D; --ink:#3A2230; --ink-soft:#7A5D6B; --white:#fff;
+    --r:28px; --border:3px solid var(--ink); --shadow:0 7px 0 var(--ink); --shadow-sm:0 5px 0 var(--ink);
+  }
   * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; background:var(--bg); color:var(--ink); line-height:1.6; -webkit-font-smoothing:antialiased; }
-  .wrap { max-width:720px; margin:0 auto; padding:48px 22px 70px; }
-  .logo { font-size:26px; font-weight:800; color:var(--berry); letter-spacing:-0.5px; }
-  h1 { font-size:28px; margin:24px 0 6px; }
-  .date { color:var(--ink-soft); font-size:14px; margin-bottom:26px; }
-  h2 { font-size:19px; margin:26px 0 8px; }
-  p, li { color:var(--ink); font-size:15.5px; }
-  ul { margin:8px 0 8px 22px; }
-  li { margin-bottom:5px; }
-  .callout { background:var(--card); border:2.5px solid var(--line); border-radius:18px; padding:18px 20px; margin:20px 0; box-shadow:0 4px 0 var(--line); }
-  a { color:var(--berry); font-weight:600; }
-  footer { margin-top:36px; font-size:14px; color:var(--ink-soft); }
-  footer a { margin-right:14px; }
-  @media (prefers-color-scheme: dark) { :root { --bg:#24151D; --card:#341F2A; --ink:#FBEAF0; --ink-soft:#C69EB0; --line:#120A0E; --berry:#F0789A; } }
+  body { font-family:'Nunito',sans-serif; background:var(--bg); color:var(--ink); line-height:1.65; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3 { font-family:'Baloo 2',sans-serif; line-height:1.1; }
+  a { color:var(--berry); font-weight:700; }
+  .wrap { max-width:860px; margin:0 auto; padding:0 24px; }
+  nav { position:sticky; top:0; z-index:50; background:rgba(253,240,243,.92); backdrop-filter:blur(14px); border-bottom:3px solid var(--ink); }
+  .nav-in { max-width:1180px; margin:0 auto; padding:0 24px; display:flex; align-items:center; justify-content:space-between; height:76px; }
+  .logo { display:flex; align-items:center; gap:12px; text-decoration:none; }
+  .logo img { width:44px; height:44px; border-radius:12px; border:2.5px solid var(--ink); }
+  .logo b { font-family:'Baloo 2'; font-weight:800; font-size:26px; color:var(--berry); }
+  .logo span { font-size:10px; font-weight:800; letter-spacing:3px; color:var(--ink); display:block; margin-top:-6px; }
+  .nav-links { display:flex; gap:28px; font-weight:800; font-size:15px; }
+  .nav-links a { text-decoration:none; color:var(--ink-soft); }
+  .nav-links a:hover { color:var(--berry); }
+  .btn { font-family:'Baloo 2'; font-weight:700; font-size:17px; background:var(--pink); color:#fff; text-decoration:none; padding:13px 28px; border-radius:999px; border:var(--border); box-shadow:var(--shadow-sm); }
+  header.page { text-align:center; padding:72px 24px 34px; }
+  .sec-label { display:inline-block; background:var(--ink); color:#fff; border-radius:999px; font-weight:800; font-size:12.5px; letter-spacing:2.5px; padding:8px 18px; margin-bottom:18px; }
+  h1 { font-size:clamp(40px,6vw,64px); font-weight:800; letter-spacing:-1px; }
+  .date { color:var(--ink-soft); font-weight:700; font-size:14.5px; margin-top:10px; }
+  .tabs { display:flex; justify-content:center; gap:12px; flex-wrap:wrap; padding:6px 24px 44px; }
+  .tab { font-family:'Baloo 2'; font-weight:700; font-size:16px; text-decoration:none; color:var(--ink); background:var(--white); border:2.5px solid var(--ink); border-radius:999px; padding:10px 26px; box-shadow:0 4px 0 var(--ink); }
+  .tab.on { background:var(--pink); color:#fff; }
+  .tab:hover { transform:translateY(2px); box-shadow:0 2px 0 var(--ink); }
+  .card { background:var(--white); border:var(--border); border-radius:var(--r); box-shadow:var(--shadow); padding:30px 34px; margin-bottom:26px; }
+  .card.hero { background:var(--gold); }
+  .card h2 { font-size:24px; margin-bottom:8px; }
+  .card p, .card li { font-size:16px; color:var(--ink); font-weight:600; }
+  .card p + p { margin-top:10px; }
+  .card ul { margin:10px 0 4px 22px; }
+  .card li { margin-bottom:6px; }
+  main { padding-bottom:80px; }
+  footer { background:var(--ink); color:var(--bg); padding:54px 0; }
+  .foot-in { max-width:1180px; margin:0 auto; padding:0 24px; display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap; }
+  .foot-in .logo b { color:#fff; }
+  .foot-in .logo span { color:var(--gold); }
+  .foot-links { display:flex; gap:26px; font-weight:700; font-size:14.5px; }
+  .foot-links a { color:rgba(253,240,243,.75); text-decoration:none; }
+  .foot-links a:hover { color:var(--gold); }
+  .copyright { font-size:13px; color:rgba(253,240,243,.5); font-weight:600; }
+  @media (max-width:900px){ .nav-links{display:none} .card{padding:24px 22px} }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <div class="logo">JUICY 🍑</div>
-  <h1>Privacy Policy</h1>
-  <div class="date">Last updated: July 16, 2026</div>
 
-  <div class="callout">
-    <strong>The short version:</strong> JUICY does not collect, store, or share any personal data.
-    Everything you do in the app stays on your device. We have no servers, no accounts, and no tracking.
+<nav>
+  <div class="nav-in">
+    <a class="logo" href="index.html"><img src="assets/icon.png" alt=""><div><b>JUICY</b><span>GLUTEMAXXING</span></div></a>
+    <div class="nav-links">
+      <a href="index.html#glowup">The Glow-Up</a><a href="index.html#features">Features</a><a href="index.html#moves">The Moves</a><a href="index.html#juicy">Meet Juicy</a>
+    </div>
+    <a class="btn" href="index.html#get">Get the app</a>
+  </div>
+</nav>
+
+<header class="page">
+  <div class="sec-label">LEGAL</div>
+  <h1>Privacy Policy</h1>
+  <div class="date">Last updated: July 17, 2026</div>
+</header>
+
+<div class="tabs">
+  <a class="tab on" href="privacy.html">Privacy</a>
+  <a class="tab" href="terms.html">Terms of Use</a>
+  <a class="tab" href="support.html">Support</a>
+</div>
+
+<main class="wrap">
+  <div class="card hero">
+    <h2>The short version 🍑</h2>
+    <p>JUICY does not collect, store, sell, or share any personal data. There are no accounts, no servers, no analytics, and no tracking. Everything you do in the app lives on your own device and nowhere else.</p>
   </div>
 
-  <p>This Privacy Policy explains how the JUICY - Glutemaxxing mobile application ("JUICY", "the app", "we", "us") handles your information. By using JUICY, you agree to this policy.</p>
+  <div class="card">
+    <h2>Who we are</h2>
+    <p>This Privacy Policy describes how the JUICY - Glutemaxxing mobile application ("JUICY", "the app", "we", "us") handles information when you use it on your device. By downloading or using JUICY, you agree to this policy.</p>
+  </div>
 
-  <h2>Information We Collect</h2>
-  <p>None. JUICY does not ask you to create an account and does not collect any personally identifiable information. The name and workout preferences you enter during setup, along with your progress, streaks, coins and collection, are stored <strong>only on your own device</strong> and are never transmitted to us or anyone else.</p>
+  <div class="card">
+    <h2>Information we collect</h2>
+    <p>None. JUICY never asks you to create an account, and we never receive your name, email address, phone number, location, photos, health records, or any other personally identifiable information.</p>
+    <p>During setup you may enter a first name or nickname and answer a few questions about your fitness level, goals and equipment. These answers are used only to build your workout plan, are stored <strong>only on your device</strong>, and are never transmitted to us or to anyone else.</p>
+  </div>
 
-  <h2>Data Storage</h2>
-  <p>All of your app data is saved locally on your device using your phone's standard storage. If you delete the app, this data is removed with it. We cannot access, recover, or restore it.</p>
+  <div class="card">
+    <h2>What stays on your device</h2>
+    <ul>
+      <li>Your onboarding answers (name, goals, fitness level, equipment, reminder time)</li>
+      <li>Your workout history, streaks, coins, badges and collection</li>
+      <li>Juicy's growth stage and your challenge progress</li>
+      <li>App settings such as sound preferences</li>
+    </ul>
+    <p>If you delete the app, this data is deleted with it. We have no copy and no way to recover it. The in-app "Delete all data" option in Settings wipes it instantly on demand.</p>
+  </div>
 
-  <h2>Purchases</h2>
-  <p>Subscriptions are processed by Apple and by our payment provider, RevenueCat, to confirm your subscription status. This process is handled entirely by Apple and RevenueCat under their own privacy policies. We never see or store your payment details, card numbers, or Apple ID.</p>
-  <ul>
-    <li>Apple Privacy Policy: <a href="https://www.apple.com/legal/privacy/">apple.com/legal/privacy</a></li>
-    <li>RevenueCat Privacy Policy: <a href="https://www.revenuecat.com/privacy/">revenuecat.com/privacy</a></li>
-  </ul>
+  <div class="card">
+    <h2>Purchases and subscriptions</h2>
+    <p>Subscriptions are processed by Apple through your Apple ID. To validate your subscription status, the app communicates with RevenueCat, our purchase infrastructure provider. This exchange contains an anonymous app-generated identifier and your subscription state. It never includes your name, Apple ID, or payment details. We never see or store your card number or billing information.</p>
+    <ul>
+      <li>Apple's privacy policy: <a href="https://www.apple.com/legal/privacy/">apple.com/legal/privacy</a></li>
+      <li>RevenueCat's privacy policy: <a href="https://www.revenuecat.com/privacy/">revenuecat.com/privacy</a></li>
+    </ul>
+  </div>
 
-  <h2>Analytics and Tracking</h2>
-  <p>JUICY contains no third-party analytics, advertising, or tracking software. We do not use cookies, device identifiers for tracking, or any behavioral profiling.</p>
+  <div class="card">
+    <h2>Notifications</h2>
+    <p>If you allow notifications, workout reminders are scheduled <strong>locally on your device</strong>. There is no push server. We cannot send you messages remotely, and your notification permission status never leaves your phone.</p>
+  </div>
 
-  <h2>Children's Privacy</h2>
-  <p>JUICY is not directed at children under 13. Because we collect no personal data, we do not knowingly collect information from anyone, including children.</p>
+  <div class="card">
+    <h2>Analytics, advertising and tracking</h2>
+    <p>JUICY contains no third-party analytics SDKs, no advertising networks, no social media pixels, and no behavioral tracking of any kind. We do not use your data for marketing, because we do not have your data.</p>
+  </div>
 
-  <h2>Changes to This Policy</h2>
-  <p>If this policy changes, we will update the date at the top of this page. Continued use of the app after changes means you accept the updated policy.</p>
+  <div class="card">
+    <h2>Your rights</h2>
+    <p>Privacy laws such as the GDPR (Europe) and CCPA (California) give you rights over your personal data, including access, correction and deletion. Because JUICY collects no personal data, there is nothing for us to hand over, correct, or erase on our side. Everything is already in your hands, on your device.</p>
+  </div>
 
-  <h2>Contact</h2>
-  <p>Questions about this policy? Email us at <a href="mailto:cevo355@gmail.com">cevo355@gmail.com</a>.</p>
+  <div class="card">
+    <h2>Children's privacy</h2>
+    <p>JUICY is not directed at children under 13, and we do not knowingly collect information from anyone, including children. If you believe a child is using the app inappropriately, contact us and we will help.</p>
+  </div>
 
-  <footer>
-    <a href="index.html">Home</a><a href="terms.html">Terms of Use</a><a href="support.html">Support</a>
-  </footer>
-</div>
+  <div class="card">
+    <h2>Changes to this policy</h2>
+    <p>If we ever change how the app handles data, we will update this page and the date at the top before the change takes effect. Continued use of the app after an update means you accept the revised policy.</p>
+  </div>
+
+  <div class="card">
+    <h2>Contact</h2>
+    <p>Questions about privacy? Email us at <a href="mailto:cevo355@gmail.com">cevo355@gmail.com</a> and a human will reply.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="foot-in">
+    <a class="logo" href="index.html"><img src="assets/icon.png" alt=""><div><b>JUICY</b><span>GLUTEMAXXING</span></div></a>
+    <div class="foot-links"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a><a href="support.html">Support</a></div>
+    <div class="copyright">© 2026 JUICY. Grow responsibly. 🍑</div>
+  </div>
+</footer>
 </body>
 </html>
