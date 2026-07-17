@@ -201,6 +201,9 @@
   .feat:hover { transform: translateY(-6px) rotate(-.4deg); }
   .feat .media { height: 330px; overflow: hidden; border-bottom: var(--border); background: var(--bg-soft); position: relative; display: flex; align-items: center; justify-content: center; }
   .feat .media > video.fill { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  /* mascot clips are baked onto the app blush (#FDF0F3): the media bg must
+     match EXACTLY so the video edges disappear */
+  .feat .media.contain { background: #FDF0F3; }
   .feat .media.contain video { height: 100%; width: auto; }
   .feat .body { padding: 26px 28px 30px; }
   .feat h3 { font-size: 27px; font-weight: 800; margin-bottom: 6px; }
